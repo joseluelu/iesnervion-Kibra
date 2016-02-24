@@ -59,8 +59,8 @@ namespace Entidades
         }
 
         [DataType(DataType.Currency)]
-        private decimal _Salario;
-        public decimal Salario
+        private double _Salario;
+        public double Salario
         {
             get
             {
