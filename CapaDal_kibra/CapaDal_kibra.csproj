@@ -43,6 +43,7 @@
     <Compile Include="ConexionBuilder.cs" />
     <Compile Include="DataBaseHelper.cs" />
     <Compile Include="DepartamentoDal.cs" />
+    <Compile Include="DetalleCompraDAL.cs" />
     <Compile Include="EmpleadoDal.cs" />
     <Compile Include="LoginDal.cs" />
     <Compile Include="PrivilegioDal.cs" />
