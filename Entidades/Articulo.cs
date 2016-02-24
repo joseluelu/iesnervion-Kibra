@@ -79,8 +79,8 @@ namespace Entidades
             }
         }
 
-        private decimal _PrecioArt;
-        public decimal PrecioArt
+        private double _PrecioArt;
+        public double PrecioArt
         {
             get
             {
