@@ -42,7 +42,7 @@ namespace CapaDal_kibra
             DataRow datosDetalleCompra = datos.Rows[0];
             //Recojo los datos de la tabla y los meto en un objeto DetalleCompra
             int idDetalles = Convert.ToInt32(datosDetalleCompra[0]);
-            decimal precioUnidad = Convert.ToDecimal(datosDetalleCompra[1]);
+            double precioUnidad = Convert.ToDouble(datosDetalleCompra[1]);
             int cantidad = Convert.ToInt32(datosDetalleCompra[2]);
             int iva = Convert.ToInt32(datosDetalleCompra[3]);
             OrdenCompra ordenCompra = (OrdenCompra) datosDetalleCompra[4];
