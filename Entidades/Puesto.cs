@@ -79,7 +79,7 @@ namespace Entidades
 
         public Puesto() { }
 
-        public Puesto(int idPuesto, string nombrePue, string descPue, decimal salario)
+        public Puesto(int idPuesto, string nombrePue, string descPue, double salario)
         {
             _IdPuesto = idPuesto;
             _NombrePue = nombrePue;

@@ -141,7 +141,7 @@ namespace Entidades
 
         public Articulo() { }
 
-        public Articulo(int idArticulo, string nombreArt, byte[] imagenArt, string descArt, decimal precioArt, int stock, int stockMin, Proveedor proveedorArt)
+        public Articulo(int idArticulo, string nombreArt, byte[] imagenArt, string descArt, double precioArt, int stock, int stockMin, Proveedor proveedorArt)
         {
             _IdArticulo = idArticulo;
             _NombreArt = nombreArt;

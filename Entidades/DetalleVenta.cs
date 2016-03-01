@@ -36,8 +36,8 @@ namespace Entidades
             }
         }
 
-        private decimal _PrecioUnidad;
-        public decimal PrecioUnidad
+        private double _PrecioUnidad;
+        public double PrecioUnidad
         {
             get
             {
@@ -108,7 +108,7 @@ namespace Entidades
         public DetalleVenta() { }
 
         public DetalleVenta(int idDetalles,
-                              decimal precioUnidad,
+                              double precioUnidad,
                               int cantidad,
                               int iva,
                               OrdenVenta ordenVenta,
