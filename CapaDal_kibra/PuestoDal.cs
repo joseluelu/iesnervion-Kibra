@@ -31,7 +31,7 @@ namespace CapaDal_kibra
             DataTable datos = helper.getDatos(comando);
             foreach (DataRow row in datos.Rows)
             {
-                Puesto p = new Puesto(Convert.ToInt32(row[0]), row[1].ToString(),row[2].ToString(),Convert.ToDecimal(row[3].ToString()));
+                Puesto p = new Puesto(Convert.ToInt32(row[0]), row[1].ToString(),row[2].ToString(),Convert.ToDouble(row[3].ToString()));
                 listado.Add(p);
             }
 
@@ -55,7 +55,7 @@ namespace CapaDal_kibra
             DataTable datos = helper.getDatos(comando);
             foreach (DataRow row in datos.Rows)
             {
-                p = new Puesto(Convert.ToInt32(row[0]), row[1].ToString(), row[2].ToString(), Convert.ToDecimal(row[3].ToString()));
+                p = new Puesto(Convert.ToInt32(row[0]), row[1].ToString(), row[2].ToString(), Convert.ToDouble(row[3].ToString()));
 
             }
 
