@@ -117,12 +117,32 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Global.asax" />
+    <Content Include="Resources\css\bootstrap-rtl.min.css" />
+    <Content Include="Resources\css\bootstrap.min.css" />
+    <Content Include="Resources\css\bootstrap4.min.css" />
     <Content Include="Resources\css\info.txt" />
-    <Content Include="Resources\css\reset.css" />
-    <Content Include="Resources\css\style.css" />
+    <Content Include="Resources\css\main.css" />
+    <Content Include="Resources\css\plugins\morris.css" />
+    <Content Include="Resources\css\sb-admin-rtl.css" />
+    <Content Include="Resources\css\sb-admin.css" />
+    <Content Include="Resources\css\vistas\index.css" />
+    <Content Include="Resources\font-awesome\css\font-awesome.css" />
+    <Content Include="Resources\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Resources\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Resources\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Resources\images\favicon_Kibra _16x16.ico" />
+    <Content Include="Resources\images\gestionempresarial.jpg" />
     <Content Include="Resources\images\info.txt" />
-    <Content Include="Resources\images\radiation.png" />
+    <Content Include="Resources\images\Logo_Kibra.png" />
+    <Content Include="Resources\js\bootstrap.min.js" />
+    <Content Include="Resources\js\bootstrap4.min.js" />
     <Content Include="Resources\js\info.txt" />
+    <Content Include="Resources\js\jquery.js" />
+    <Content Include="Resources\js\main.js" />
+    <Content Include="Resources\js\morris\morris-data.js" />
+    <Content Include="Resources\js\morris\morris.js" />
+    <Content Include="Resources\js\morris\morris.min.js" />
+    <Content Include="Resources\js\morris\raphael.min.js" />
     <Content Include="Resources\js\script.js" />
     <Content Include="Resources\sound\info.txt" />
     <Content Include="Web.config" />
@@ -136,6 +156,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Resources\js\vistas\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -155,6 +176,47 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Home.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Resources\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Resources\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Resources\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Resources\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Resources\font-awesome\less\core.less" />
+    <Content Include="Resources\font-awesome\less\fixed-width.less" />
+    <Content Include="Resources\font-awesome\less\font-awesome.less" />
+    <Content Include="Resources\font-awesome\less\icons.less" />
+    <Content Include="Resources\font-awesome\less\larger.less" />
+    <Content Include="Resources\font-awesome\less\list.less" />
+    <Content Include="Resources\font-awesome\less\mixins.less" />
+    <Content Include="Resources\font-awesome\less\path.less" />
+    <Content Include="Resources\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Resources\font-awesome\less\spinning.less" />
+    <Content Include="Resources\font-awesome\less\stacked.less" />
+    <Content Include="Resources\font-awesome\less\variables.less" />
+    <Content Include="Resources\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Resources\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Resources\font-awesome\scss\_core.scss" />
+    <Content Include="Resources\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Resources\font-awesome\scss\_icons.scss" />
+    <Content Include="Resources\font-awesome\scss\_larger.scss" />
+    <Content Include="Resources\font-awesome\scss\_list.scss" />
+    <Content Include="Resources\font-awesome\scss\_mixins.scss" />
+    <Content Include="Resources\font-awesome\scss\_path.scss" />
+    <Content Include="Resources\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Resources\font-awesome\scss\_spinning.scss" />
+    <Content Include="Resources\font-awesome\scss\_stacked.scss" />
+    <Content Include="Resources\font-awesome\scss\_variables.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Resources\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Resources\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Resources\fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_LayoutMenu.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

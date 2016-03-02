@@ -10,7 +10,7 @@ namespace CapaDal_kibra
 {
     public class ConexionBuilder
     {
-        public String server = "192.168.0.17";
+        public String server = "localhost";
         public String bbdd = "proyecto_kibra";
         public String usuario = "kibra";
         public String pass = "1234";
