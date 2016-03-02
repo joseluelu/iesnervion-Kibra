@@ -1,0 +1,115 @@
+﻿@model Proyecto_kibra.Models.EmpleadoModel
+
+@{
+    ViewBag.Title = "Nuevo";
+}
+
+<script src="../../Resources/js/jquery-1.12.1.min.js"></script>
+<h2>Nuevo</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Empleado</legend>
+
+        @Html.HiddenFor(model => model.Empleado.IdEmpleado)
+        <div class="editor-label">
+            DNI
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Empleado.DniEmp)
+            @Html.ValidationMessageFor(model => model.Empleado.DniEmp)
+        </div>
+
+        <div class="editor-label">
+            Nombre
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Empleado.NombreEmp)
+            @Html.ValidationMessageFor(model => model.Empleado.NombreEmp)
+        </div>
+
+        <div class="editor-label">
+            Apellidos
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Empleado.ApellidoEmp)
+            @Html.ValidationMessageFor(model => model.Empleado.ApellidoEmp)
+        </div>
+
+        <div class="editor-label">
+            Fecha de nacimiento
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Empleado.FechaNac)
+            @Html.ValidationMessageFor(model => model.Empleado.FechaNac)
+        </div>
+
+        <div class="editor-label">
+            Dirección
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Empleado.DireccionEmp)
+            @Html.ValidationMessageFor(model => model.Empleado.DireccionEmp)
+        </div>
+
+        <div class="editor-label">
+            Teléfono
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Empleado.TelefonoEmp)
+            @Html.ValidationMessageFor(model => model.Empleado.TelefonoEmp)
+        </div>
+
+        <div class="editor-label">
+            Email
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Empleado.EmailEmp)
+            @Html.ValidationMessageFor(model => model.Empleado.EmailEmp)
+        </div>
+
+        <div class="editor-label">
+            Departamento
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Empleado.DepartamentoEmp.IdDepartamento, new SelectList(Model.Departamentos, "IdDepartamento", "NombreDep"))
+        </div>
+
+        <div class="editor-label">
+            Puesto
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Empleado.PuestoEmp.IdPuesto, new SelectList(Model.Puestos, "IdPuesto", "NombrePue"))
+        </div>
+
+        <div class="editor-label">
+            Provicia
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.ProvinciaId, new SelectList(Model.Provincias, "IdProvincia", "NombreProv"))
+        </div>
+
+        <div class="editor-label">
+            Ciudad
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Empleado.CiudadEmp.IdCiudad, new SelectList(Model.Ciudades, "IdCiudad", "NombreCiu"))
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script>
+    //Sacar de este documento.
+
+</script>
