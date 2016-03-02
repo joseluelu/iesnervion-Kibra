@@ -43,9 +43,10 @@
                 </div>
                 if (Model.ErrorMessage != null)
                 {
+                    String[] splitArrayError = @Model.ErrorMessage.Split('.');
                     <div id="alert_error_msg" class="alert alert-danger">
-                        <strong>@Model.ErrorMessage.Split(',')[0]! </strong>
-                        @Model.ErrorMessage.Split(',')[1]
+                        <p><strong>@splitArrayError[0]! </strong></p>
+                        @splitArrayError[1]
                     </div>
                 }
 
