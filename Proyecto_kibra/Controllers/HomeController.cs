@@ -93,5 +93,18 @@ namespace Proyecto_kibra.Controllers
             }
             return res;
         }
+
+        /// <summary>
+        ///  Action para cierre de sesión
+        /// </summary>
+        /// <returns> Al destruir la session redirecciona a la pagina de login</returns>
+        public ActionResult CerrarSession()
+        {
+            Session.Abandon();
+            Session.Clear();
+            return RedirectToAction("Index");
+        }
+
     }
+    
 }
