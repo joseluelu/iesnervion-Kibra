@@ -1,18 +1,11 @@
-<<<<<<< HEAD
-﻿using System;
-=======
+﻿﻿using System;
 ﻿using Proyecto_kibra.Models;
-using System;
->>>>>>> refs/remotes/JMGuisadoG/master
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-<<<<<<< HEAD
 using Entidades;
-=======
 using CapaDal_kibra;
->>>>>>> refs/remotes/JMGuisadoG/master
 
 namespace Proyecto_kibra.Controllers
 {
@@ -21,13 +14,13 @@ namespace Proyecto_kibra.Controllers
         //
         // GET: /Empleado/
 
-<<<<<<< HEAD
         public ActionResult Detalles()
         {
             Entidades.Login l = (Entidades.Login)Session["usuario"];
             Empleado empleado = l.Empleado;
             return View(empleado);
-=======
+        }
+
         public ActionResult Nuevo()
         {
             EmpleadoModel modelo = new EmpleadoModel();
@@ -45,7 +38,6 @@ namespace Proyecto_kibra.Controllers
             modelo.Ciudades = helperCiudad.getListaCiudades();
 
             return View(modelo);
->>>>>>> refs/remotes/JMGuisadoG/master
         }
 
     }
