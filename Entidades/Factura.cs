@@ -12,7 +12,7 @@ using Entidades;
 */
 namespace Entidades
 {
-    class Factura
+    public class Factura
     {
         #region "Campos privados y propiedades públicas"
         
