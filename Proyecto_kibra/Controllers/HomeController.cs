@@ -49,7 +49,7 @@ namespace Proyecto_kibra.Controllers
                 log = helper.getLogin(l.login.Usuario, l.login.Passwd);
                 if (log == null)
                 {
-                    l.ErrorMessage = "Error, nombre de usuario o password no validos.";
+                    l.ErrorMessage = "Error. nombre de usuario o password no validos.";
                     actRes = View(l);
 
                 }
