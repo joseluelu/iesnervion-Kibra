@@ -44,8 +44,8 @@
     <Compile Include="DataBaseHelper.cs" />
     <Compile Include="DepartamentoDal.cs" />
     <Compile Include="DetalleCompraDAL.cs" />
-    <Compile Include="DetalleVentaDAL.cs" />
     <Compile Include="EmpleadoDal.cs" />
+    <Compile Include="FacturaDal.cs" />
     <Compile Include="LoginDal.cs" />
     <Compile Include="PrivilegioDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
