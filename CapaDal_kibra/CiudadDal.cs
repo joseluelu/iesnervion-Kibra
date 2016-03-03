@@ -57,12 +57,12 @@ namespace CapaDal_kibra
         /// </summary>
         /// <param name="p">Provincia por la qe buscar</param>
         /// <returns>List de ciudades filtrada</returns>
-        public List<Ciudad> getListaPorProvincia(Provincia p)
+        public List<Ciudad> getListaPorProvincia(Int32 p)
         {
             List<Ciudad> listado = new List<Ciudad>();
             DataBaseHelper helper = new DataBaseHelper();
             SqlCommand comando = new SqlCommand("select idciudad,nombreCiu,provincia from ciudades where provincia=@provincia");
-            SqlParameter parameter = new SqlParameter("@provincia", p.IdProvincia);
+            SqlParameter parameter = new SqlParameter("@provincia", p);
             parameter.DbType = DbType.Int32;
             comando.Parameters.Add(parameter);
 
@@ -79,9 +79,10 @@ namespace CapaDal_kibra
             {
                 throw ex;
             }
+            Provincia prov=new ProvinciaDal().getProvinciaPorId(Convert.ToInt32(p));
             foreach (DataRow row in datos.Rows)
             {
-                Ciudad c = new Ciudad(Convert.ToInt32(row[0]), row[1].ToString(), p);
+                Ciudad c = new Ciudad(Convert.ToInt32(row[0]), row[1].ToString(), prov);
                 listado.Add(c);
             }
             return listado;

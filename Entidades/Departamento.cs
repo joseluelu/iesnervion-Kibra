@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -39,8 +40,11 @@ namespace Entidades
             }
         }
 
-        [StringLength(80)]
+
         private String _NombreDep;
+        [StringLength(80)]
+        [Required(ErrorMessage = "El nombre es obligatorio")]
+        [DisplayName("Nombre")]
         public String NombreDep
         {
             get
@@ -53,8 +57,11 @@ namespace Entidades
             }
         }
 
-        [StringLength(150)]
+
         private String _DescDep;
+        [StringLength(150)]
+        [Required(ErrorMessage = "La descripción es obligatoria.")]
+        [DisplayName("Descripción")]
         public String DescDep
         {
             get
@@ -67,8 +74,11 @@ namespace Entidades
             }
         }
 
-        [StringLength(12)]
+
         private String _Telefono;
+        [StringLength(12)]
+        [Required(ErrorMessage = "El teléfono es obligatorio.")]
+        [DisplayName("Teléfono")]
         public String Telefono
         {
             get

@@ -178,13 +178,13 @@ namespace CapaDal_kibra
         /// </summary>
         /// <param name="puesto">Puesto a eliminar</param>
         /// <returns>true si la operacion fue correcta, false en caso contrario</returns>
-        public Boolean eliminarPuesto(Puesto puesto)
+        public Boolean eliminarPuesto(int id)
         {
             Boolean eliminado = false;
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.StoredProcedure;
             comando.CommandText = "eliminarPuesto";
-            SqlParameter parametro1 = new SqlParameter("@idPuesto", puesto.IdPuesto);
+            SqlParameter parametro1 = new SqlParameter("@idPuesto", id);
 
             comando.Parameters.Add(parametro1);
 

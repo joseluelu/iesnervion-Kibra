@@ -28,8 +28,10 @@ namespace Entidades
             }
         }
 
-        [StringLength(80)]
+        
         private string _NombrePue;
+        [StringLength(80)]
+        [Required(ErrorMessage="El nombre es obligatorio")]
         public string NombrePue
         {
             get
@@ -43,8 +45,10 @@ namespace Entidades
             }
         }
 
-        [StringLength(150)]
+        
         private string _DescPue;
+        [StringLength(150)]
+        [Required(ErrorMessage = "La descripcion es obligatoria")]
         public string DescPue
         {
             get
@@ -60,6 +64,7 @@ namespace Entidades
 
         [DataType(DataType.Currency)]
         private double _Salario;
+
         public double Salario
         {
             get
