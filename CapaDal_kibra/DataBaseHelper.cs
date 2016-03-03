@@ -88,6 +88,39 @@ namespace CapaDal_kibra
 
         }
 
+        public int executeStoredProcedureGuardar(SqlCommand comando)
+        {
+            int opCorrecta = -1;
+            try
+            {
+                ConexionBuilder connBuilder = new ConexionBuilder();
+                SqlConnection conn = connBuilder.getConexion();
+
+                SqlParameter outputParam = new SqlParameter("@res", SqlDbType.Int)
+                {
+                    Direction = ParameterDirection.Output
+                };
+
+                comando.Parameters.Add(outputParam);
+                comando.Connection = conn;
+                comando.ExecuteNonQuery();
+                Debug.WriteLine(outputParam.Value.ToString());
+                opCorrecta = Convert.ToInt32 (outputParam.Value.ToString());
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (InvalidOperationException ex)
+            {
+
+                throw ex;
+            }
+            return opCorrecta;
+
+        }
+
+
         public Boolean EjecutaNoQuery(SqlCommand consulta)
         {
             Boolean res = false;

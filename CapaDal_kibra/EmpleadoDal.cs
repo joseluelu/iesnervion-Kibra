@@ -238,9 +238,9 @@ namespace CapaDal_kibra
         /// </summary>
         /// <param name="e">Empleado a guardar</param>
         /// <returns>True si la operacion fue correcta, false en caso contrario</returns>
-        public Boolean guardarEmpleado(Empleado e)
+        public int guardarEmpleado(Empleado e)
         {
-            Boolean insertado = false;
+            int id = -1;
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.StoredProcedure;
             comando.CommandText = "insertarEmpleado";
@@ -270,7 +270,7 @@ namespace CapaDal_kibra
             DataBaseHelper helper = new DataBaseHelper();
             try
             {
-                insertado = helper.executeStoredProcedure(comando);
+                id = helper.executeStoredProcedureGuardar(comando);
             }
             catch (SqlException ex)
             {
@@ -280,7 +280,7 @@ namespace CapaDal_kibra
             {
                 throw ex;
             }
-            return insertado;
+            return id;
         }
 
         /*

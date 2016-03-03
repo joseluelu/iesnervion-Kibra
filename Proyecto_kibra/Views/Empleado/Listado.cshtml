@@ -20,7 +20,7 @@
     </div>
 
     <p>
-        @Html.ActionLink("Create New", "Nuevo", "", new { @class = "btn btn-primary btn-lg" })
+        @Html.ActionLink("Nuevo", "Nuevo", "", new { @class = "btn btn-primary btn-lg" })
     </p>
     <div class="table-responsive">
         <table class="table table-bordered table-hover table-striped">
@@ -82,9 +82,9 @@
                         @Html.DisplayFor(modelItem => item.EmailEmp)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { @id = item.IdEmpleado }) |
+                        @Html.ActionLink("Editar", "Editar", new { @id = item.IdEmpleado }) |
                         @Html.ActionLink("Detalles", "Detalles", new { @id = item.IdEmpleado }) |
-                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                        @Html.ActionLink("Eliminar", "Eliminar", new { @id = item.IdEmpleado })
                     </td>
                 </tr>
             }

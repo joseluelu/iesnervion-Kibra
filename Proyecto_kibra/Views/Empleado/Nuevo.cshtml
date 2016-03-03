@@ -4,7 +4,7 @@
     ViewBag.Title = "Nuevo";
     Layout = "~/Views/_LayoutMenu.cshtml";
 }
-
+<script src="~/Resources/js/ajax_ciudad.js"></script>
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12">
@@ -22,7 +22,7 @@
         </div>
     </div>
 
-    @using (Html.BeginForm("Index", "Empleado", FormMethod.Post, new { @class = "form-horizontal" }))
+    @using (Html.BeginForm("Nuevo", "Empleado", FormMethod.Post, new { @class = "form-horizontal" }))
     {
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true)
@@ -92,7 +92,8 @@
             <div class="form-group">
                 <label for="inputEmail3" class="col-sm-2 control-label">@Html.DisplayNameFor(model => model.Empleado.DepartamentoEmp)</label>
                 <div class="col-sm-5">
-                    @Html.TextBoxFor(model => model.Empleado.DepartamentoEmp, new { @class = "form-control", @placeholder = @Html.DisplayNameFor(model => model.Empleado.DepartamentoEmp) })
+                    
+                    @Html.DropDownListFor(model => model.DepartamentoId, new SelectList(Model.Departamentos, "IdDepartamento", "NombreDep"), new { @class = "form-control", @placeholder = @Html.DisplayNameFor(model => model.Empleado.DepartamentoEmp) })
                 </div>
                 @Html.ValidationMessageFor(model => model.Empleado.DepartamentoEmp)
             </div>
@@ -100,7 +101,8 @@
             <div class="form-group">
                 <label for="inputEmail3" class="col-sm-2 control-label">@Html.DisplayNameFor(model => model.Empleado.PuestoEmp)</label>
                 <div class="col-sm-5">
-                    @Html.TextBoxFor(model => model.Empleado.PuestoEmp, new { @class = "form-control", @placeholder = @Html.DisplayNameFor(model => model.Empleado.PuestoEmp) })
+                    
+                     @Html.DropDownListFor(model => model.PuestoId, new SelectList(Model.Puestos, "IdPuesto", "NombrePue"), new { @class = "form-control", @placeholder = @Html.DisplayNameFor(model => model.Empleado.PuestoEmp) })
                 </div>
                 @Html.ValidationMessageFor(model => model.Empleado.PuestoEmp)
             </div>
@@ -108,7 +110,8 @@
             <div class="form-group">
                 <label for="inputEmail3" class="col-sm-2 control-label">@Html.DisplayNameFor(model => model.ProvinciaId)</label>
                 <div class="col-sm-5">
-                    @Html.TextBoxFor(model => model.ProvinciaId, new { @class = "form-control", @placeholder = @Html.DisplayNameFor(model => model.ProvinciaId) })
+                   
+                     @Html.DropDownListFor(model => model.ProvinciaId, new SelectList(Model.Provincias, "IdProvincia", "NombreProv") ,new {  @class = "form-control", @placeholder = @Html.DisplayNameFor(model => model.ProvinciaId), @id="cmbProvincias", @onchange="cambiarCiudades()"})
                 </div>
                 @Html.ValidationMessageFor(model => model.ProvinciaId)
             </div>
@@ -116,16 +119,33 @@
             <div class="form-group">
                 <label for="inputEmail3" class="col-sm-2 control-label">Ciudades</label>
                 <div class="col-sm-5">
-                    @*@Html.TextBoxFor(model => model., new { @class = "form-control", @placeholder = "Ciudades" })*@
+                    <select id="cmbCiudades" name="ciudad" disabled class="form-control"></select>
+                    @*@Html.DropDownListFor(model => model.Empleado.CiudadEmp.IdCiudad, null ,new {  @class = "form-control", @placeholder = @Html.DisplayNameFor(model => model.Empleado.CiudadEmp), @id="cmbCiudades",@disabled="disabled"})*@
                 </div>
-                @*@Html.ValidationMessageFor(model => model.Empleado.EmailEmp)*@
+                @Html.ValidationMessageFor(model => model.CiudadId)
+            </div>
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Usuario</label>
+                <div class="col-sm-5">
+                    @Html.TextBoxFor(model => model.usuario, new { @class = "form-control", @placeholder = @Html.DisplayNameFor(model => model.login.Usuario) })
+                </div>
+                @Html.ValidationMessageFor(model => model.usuario)
+            </div>
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-5">
+                    @Html.PasswordFor(model => model.passwd, new { @class = "form-control", @placeholder = @Html.DisplayNameFor(model => model.login.Passwd) })
+                </div>
+                @Html.ValidationMessageFor(model => model.passwd)
             </div>
 
             <div class="form-group">
                 <div class="col-sm-3">
                 </div>
                 <div class="col-sm-3">
-                    <input type="submit" class="btn btn-success" value="Create" />
+                    <input type="submit" class="btn btn-success" value="Guardar" />
                 </div>
             </div>
         </fieldset>
