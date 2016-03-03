@@ -1,9 +1,10 @@
+﻿﻿using System;
 ﻿using Proyecto_kibra.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Entidades;
 using CapaDal_kibra;
 
 namespace Proyecto_kibra.Controllers
@@ -12,6 +13,13 @@ namespace Proyecto_kibra.Controllers
     {
         //
         // GET: /Empleado/
+
+        public ActionResult Detalles()
+        {
+            Entidades.Login l = (Entidades.Login)Session["usuario"];
+            Empleado empleado = l.Empleado;
+            return View(empleado);
+        }
 
         public ActionResult Nuevo()
         {

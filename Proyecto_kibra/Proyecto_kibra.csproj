@@ -221,6 +221,9 @@
     <Content Include="Views\_LayoutMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\Empleado\Detalles.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Views\Empleado\Nuevo.cshtml" />
   </ItemGroup>
   <PropertyGroup>
