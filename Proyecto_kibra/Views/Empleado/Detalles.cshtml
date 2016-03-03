@@ -5,68 +5,79 @@
     Layout = "~/Views/_LayoutMenu.cshtml";
 }
 
-<h2>Detalles</h2>
-
-<fieldset>
-    <legend>Empleado</legend>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.IdEmpleado)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.IdEmpleado)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.DniEmp)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.DniEmp)
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Detalles <small>de empleado</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-user"></i>  <a href="/Empleado/Listado">Empleado</a>
+                </li>
+                <li class="active">
+                    <i class="fa fa-eye"></i> Detalles
+                </li>
+            </ol>
+        </div>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.NombreEmp)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.NombreEmp)
-    </div>
+    <fieldset>
+        <legend>Empleado</legend>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.ApellidoEmp)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.ApellidoEmp)
-    </div>
+        @Html.HiddenFor(model => model.IdEmpleado)
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.FechaNac)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.FechaNac)
-    </div>
+        <div class="row">
+            <label for="inputEmail3" class="col-sm-2 lead control-label">@Html.DisplayNameFor(model => model.DniEmp)</label>
+            <div class="col-sm-5">
+                @Html.DisplayFor(model => model.DniEmp, new { @class = "form-control" })
+            </div>
+        </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.DireccionEmp)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.DireccionEmp)
-    </div>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.NombreEmp)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.NombreEmp)
+        </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.TelefonoEmp)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.TelefonoEmp)
-    </div>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.ApellidoEmp)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ApellidoEmp)
+        </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.EmailEmp)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.EmailEmp)
-    </div>
-</fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.FechaNac)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.FechaNac)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.DireccionEmp)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.DireccionEmp)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.TelefonoEmp)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.TelefonoEmp)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.EmailEmp)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.EmailEmp)
+        </div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>

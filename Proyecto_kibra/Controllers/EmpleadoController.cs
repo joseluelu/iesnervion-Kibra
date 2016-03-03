@@ -14,10 +14,16 @@ namespace Proyecto_kibra.Controllers
         //
         // GET: /Empleado/
 
-        public ActionResult Detalles()
+        public ActionResult Detalles(int id)
         {
-            Entidades.Login l = (Entidades.Login)Session["usuario"];
-            Empleado empleado = l.Empleado;
+            Empleado empleado;
+            
+                
+           
+                EmpleadoDal helper = new EmpleadoDal();
+                empleado = helper.getEmpleadoPorId(id);
+          
+
             return View(empleado);
         }
 
@@ -34,10 +40,16 @@ namespace Proyecto_kibra.Controllers
             DepartamentoDal helperDepartamento = new DepartamentoDal();
             modelo.Departamentos = helperDepartamento.getListaDepartamentos();
 
-            CiudadDal helperCiudad = new CiudadDal();
-            modelo.Ciudades = helperCiudad.getListaCiudades();
+
 
             return View(modelo);
+        }
+
+        public ActionResult Listado()
+        {
+            EmpleadoDal helper = new EmpleadoDal();
+            List<Empleado> listado = helper.getListaEmpleados();
+            return View(listado);
         }
 
     }
