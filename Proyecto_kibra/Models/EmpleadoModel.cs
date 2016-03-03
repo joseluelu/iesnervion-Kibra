@@ -12,7 +12,6 @@ namespace Proyecto_kibra.Models
 
         public List<Provincia> Provincias { get; set; }
 
-        public List<Ciudad> Ciudades { get; set; }
 
         public List<Puesto> Puestos { get; set; }
 

@@ -2,109 +2,132 @@
 
 @{
     ViewBag.Title = "Nuevo";
-    //Layout = "~/Views/_LayoutMenu.cshtml";
+    Layout = "~/Views/_LayoutMenu.cshtml";
 }
 
-<h2>Nuevo</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Nuevo <small>empleado</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-user"></i>  <a href="/Empleado/Listado">Empleado</a>
+                </li>
+                <li class="active">
+                    <i class="fa fa-plus"></i> Nuevo
+                </li>
+            </ol>
+        </div>
+    </div>
 
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
+    @using (Html.BeginForm("Index", "Empleado", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
 
-    <fieldset>
-        <legend>Empleado</legend>
+        <fieldset>
 
-        @Html.HiddenFor(model => model.Empleado.IdEmpleado)
-        <div class="editor-label">
-            DNI
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Empleado.DniEmp)
-            @Html.ValidationMessageFor(model => model.Empleado.DniEmp)
-        </div>
+            @Html.HiddenFor(model => model.Empleado.IdEmpleado)
 
-        <div class="editor-label">
-            Nombre
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Empleado.NombreEmp)
-            @Html.ValidationMessageFor(model => model.Empleado.NombreEmp)
-        </div>
 
-        <div class="editor-label">
-            Apellidos
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Empleado.ApellidoEmp)
-            @Html.ValidationMessageFor(model => model.Empleado.ApellidoEmp)
-        </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">@Html.DisplayNameFor(model => model.Empleado.DniEmp)</label>
+                <div class="col-sm-5">
+                    @Html.TextBoxFor(model => model.Empleado.DniEmp, new { @class = "form-control", @placeholder = @Html.DisplayNameFor(model => model.Empleado.DniEmp) })
+                </div>
+                @Html.ValidationMessageFor(model => model.Empleado.DniEmp)
+            </div>
 
-        <div class="editor-label">
-            Fecha de nacimiento
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Empleado.FechaNac)
-            @Html.ValidationMessageFor(model => model.Empleado.FechaNac)
-        </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">@Html.DisplayNameFor(model => model.Empleado.NombreEmp)</label>
+                <div class="col-sm-5">
+                    @Html.TextBoxFor(model => model.Empleado.NombreEmp, new { @class = "form-control", @placeholder = @Html.DisplayNameFor(model => model.Empleado.NombreEmp) })
+                </div>
+                @Html.ValidationMessageFor(model => model.Empleado.NombreEmp)
+            </div>
 
-        <div class="editor-label">
-            Dirección
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Empleado.DireccionEmp)
-            @Html.ValidationMessageFor(model => model.Empleado.DireccionEmp)
-        </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">@Html.DisplayNameFor(model => model.Empleado.ApellidoEmp)</label>
+                <div class="col-sm-5">
+                    @Html.TextBoxFor(model => model.Empleado.ApellidoEmp, new { @class = "form-control", @placeholder = @Html.DisplayNameFor(model => model.Empleado.ApellidoEmp) })
+                </div>
+                @Html.ValidationMessageFor(model => model.Empleado.ApellidoEmp)
+            </div>
 
-        <div class="editor-label">
-            Teléfono
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Empleado.TelefonoEmp)
-            @Html.ValidationMessageFor(model => model.Empleado.TelefonoEmp)
-        </div>
 
-        <div class="editor-label">
-            Email
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Empleado.EmailEmp)
-            @Html.ValidationMessageFor(model => model.Empleado.EmailEmp)
-        </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">@Html.DisplayNameFor(model => model.Empleado.FechaNac)</label>
+                <div class="col-sm-5">
+                    @Html.TextBoxFor(model => model.Empleado.FechaNac, new { @class = "form-control", @placeholder = @Html.DisplayNameFor(model => model.Empleado.FechaNac) })
+                </div>
+                @Html.ValidationMessageFor(model => model.Empleado.FechaNac)
+            </div>
 
-        <div class="editor-label">
-            Departamento
-        </div>
-        <div class="editor-field">
-            @Html.DropDownListFor(model => model.Empleado.DepartamentoEmp.IdDepartamento, new SelectList(Model.Departamentos, "IdDepartamento", "NombreDep"))
-        </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">@Html.DisplayNameFor(model => model.Empleado.DireccionEmp)</label>
+                <div class="col-sm-5">
+                    @Html.TextBoxFor(model => model.Empleado.DireccionEmp, new { @class = "form-control", @placeholder = @Html.DisplayNameFor(model => model.Empleado.DireccionEmp) })
+                </div>
+                @Html.ValidationMessageFor(model => model.Empleado.DireccionEmp)
+            </div>
 
-        <div class="editor-label">
-            Puesto
-        </div>
-        <div class="editor-field">
-            @Html.DropDownListFor(model => model.Empleado.PuestoEmp.IdPuesto, new SelectList(Model.Puestos, "IdPuesto", "NombrePue"))
-        </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">@Html.DisplayNameFor(model => model.Empleado.TelefonoEmp)</label>
+                <div class="col-sm-5">
+                    @Html.TextBoxFor(model => model.Empleado.TelefonoEmp, new { @class = "form-control", @placeholder = @Html.DisplayNameFor(model => model.Empleado.TelefonoEmp) })
+                </div>
+                @Html.ValidationMessageFor(model => model.Empleado.TelefonoEmp)
+            </div>
 
-        <div class="editor-label">
-            Provicia
-        </div>
-        <div class="editor-field">
-            @Html.DropDownListFor(model => model.ProvinciaId, new SelectList(Model.Provincias, "IdProvincia", "NombreProv"))
-        </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">@Html.DisplayNameFor(model => model.Empleado.EmailEmp)</label>
+                <div class="col-sm-5">
+                    @Html.TextBoxFor(model => model.Empleado.EmailEmp, new { @class = "form-control", @placeholder = @Html.DisplayNameFor(model => model.Empleado.EmailEmp) })
+                </div>
+                @Html.ValidationMessageFor(model => model.Empleado.EmailEmp)
+            </div>
 
-        <div class="editor-label">
-            Ciudad
-        </div>
-        <div class="editor-field">
-            @Html.DropDownListFor(model => model.Empleado.CiudadEmp.IdCiudad, new SelectList(Model.Ciudades, "IdCiudad", "NombreCiu"))
-        </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">@Html.DisplayNameFor(model => model.Empleado.DepartamentoEmp)</label>
+                <div class="col-sm-5">
+                    @Html.TextBoxFor(model => model.Empleado.DepartamentoEmp, new { @class = "form-control", @placeholder = @Html.DisplayNameFor(model => model.Empleado.DepartamentoEmp) })
+                </div>
+                @Html.ValidationMessageFor(model => model.Empleado.DepartamentoEmp)
+            </div>
 
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
-}
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">@Html.DisplayNameFor(model => model.Empleado.PuestoEmp)</label>
+                <div class="col-sm-5">
+                    @Html.TextBoxFor(model => model.Empleado.PuestoEmp, new { @class = "form-control", @placeholder = @Html.DisplayNameFor(model => model.Empleado.PuestoEmp) })
+                </div>
+                @Html.ValidationMessageFor(model => model.Empleado.PuestoEmp)
+            </div>
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">@Html.DisplayNameFor(model => model.ProvinciaId)</label>
+                <div class="col-sm-5">
+                    @Html.TextBoxFor(model => model.ProvinciaId, new { @class = "form-control", @placeholder = @Html.DisplayNameFor(model => model.ProvinciaId) })
+                </div>
+                @Html.ValidationMessageFor(model => model.ProvinciaId)
+            </div>
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Ciudades</label>
+                <div class="col-sm-5">
+                    @*@Html.TextBoxFor(model => model., new { @class = "form-control", @placeholder = "Ciudades" })*@
+                </div>
+                @*@Html.ValidationMessageFor(model => model.Empleado.EmailEmp)*@
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-3">
+                </div>
+                <div class="col-sm-3">
+                    <input type="submit" class="btn btn-success" value="Create" />
+                </div>
+            </div>
+        </fieldset>
+    }
 </div>

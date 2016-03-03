@@ -26,6 +26,7 @@ namespace Entidades
         #region "Campos privados y propiedades públicas"
 
         private int _IdEmpleado;
+        [Display(Name = "Id")]
         public int IdEmpleado
         {
             get
@@ -39,8 +40,9 @@ namespace Entidades
             }
         }
 
+        private string _DniEmp;
         [StringLength(9)]
-        private string _DniEmp; 
+        [Display(Name = "DNI")]
         public string DniEmp
         {
             get
@@ -54,8 +56,10 @@ namespace Entidades
             }
         }
 
-        [StringLength(80)]
+        
         private string _NombreEmp;
+        [StringLength(80)]
+        [Display(Name = "Nombre")]
         public string NombreEmp
         {
             get
@@ -69,8 +73,10 @@ namespace Entidades
             }
         }
 
-        [StringLength(100)]
+        
         private string _ApellidoEmp;
+        [StringLength(100)]
+        [Display(Name = "Apellidos")]
         public string ApellidoEmp
         {
             get
@@ -85,6 +91,7 @@ namespace Entidades
         }
 
         private DateTime _FechaNac;
+        [Display(Name = "Fecha Nac.")]
         public DateTime FechaNac
         {
             get
@@ -98,8 +105,10 @@ namespace Entidades
             }
         }
 
-        [StringLength(150)]
+        
         private string _DireccionEmp;
+        [StringLength(150)]
+        [Display(Name = "Dirección")]
         public string DireccionEmp
         {
             get
@@ -113,8 +122,9 @@ namespace Entidades
             }
         }
 
-        [StringLength(12)]
         private string _TelefonoEmp;
+        [StringLength(12)]
+        [Display(Name = "Telefono")]
         public string TelefonoEmp
         {
             get
@@ -128,8 +138,10 @@ namespace Entidades
             }
         }
 
-        [StringLength(150)]
+        
         private string _EmailEmp;
+        [StringLength(150)]
+        [Display(Name = "Email")]
         public string EmailEmp
         {
             get
@@ -143,6 +155,7 @@ namespace Entidades
         }
 
         private Departamento _DepartamentoEmp;
+        [Display(Name = "Departamento")]
         public Departamento DepartamentoEmp
         {
             get
@@ -157,6 +170,7 @@ namespace Entidades
         }
 
         private Puesto _PuestoEmp;
+        [Display(Name = "Puesto")]
         public Puesto PuestoEmp
         {
             get
@@ -171,6 +185,7 @@ namespace Entidades
         }
 
         private Ciudad _CiudadEmp;
+        [Display(Name = "Ciudad")]
         public Ciudad CiudadEmp
         {
             get
