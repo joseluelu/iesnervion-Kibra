@@ -107,7 +107,6 @@
     <Compile Include="Controllers\EmpleadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstallController.cs" />
-    <Compile Include="Controllers\EmpleadoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -222,12 +221,9 @@
     <Content Include="Views\_LayoutMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Content Include="Views\Empleado\Detalles.cshtml" />
   </ItemGroup>
   <ItemGroup>
-=======
->>>>>>> refs/remotes/JMGuisadoG/master
     <Content Include="Views\Empleado\Nuevo.cshtml" />
   </ItemGroup>
   <PropertyGroup>
