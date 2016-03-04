@@ -267,6 +267,109 @@
   <ItemGroup>
     <Content Include="Views\Puesto\Detalles.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="CodeTemplates\AddController\ApiController.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ApiController.cs</LastGenOutput>
+    </Content>
+    <Content Include="CodeTemplates\AddController\ApiControllerWithContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ApiControllerWithContext.cs</LastGenOutput>
+    </Content>
+    <Content Include="CodeTemplates\AddController\Controller.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Controller.cs</LastGenOutput>
+    </Content>
+    <Content Include="CodeTemplates\AddController\ControllerWithContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ControllerWithContext.cs</LastGenOutput>
+    </Content>
+    <Content Include="CodeTemplates\AddView\AspxCSharp\Create.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Create.cs</LastGenOutput>
+    </Content>
+    <Content Include="CodeTemplates\AddView\AspxCSharp\Delete.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Delete.cs</LastGenOutput>
+    </Content>
+    <Content Include="CodeTemplates\AddView\AspxCSharp\Details.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Details.cs</LastGenOutput>
+    </Content>
+    <Content Include="CodeTemplates\AddView\AspxCSharp\Edit.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Edit.cs</LastGenOutput>
+    </Content>
+    <Content Include="CodeTemplates\AddView\AspxCSharp\Empty.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Empty.cs</LastGenOutput>
+    </Content>
+    <Content Include="CodeTemplates\AddView\AspxCSharp\List.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>List.cs</LastGenOutput>
+    </Content>
+    <Content Include="CodeTemplates\AddView\CSHTML\Create.cshtml" />
+    <Content Include="CodeTemplates\AddView\CSHTML\Create.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Create1.cshtml</LastGenOutput>
+    </Content>
+    <Content Include="CodeTemplates\AddView\CSHTML\Delete.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Delete.cshtml</LastGenOutput>
+    </Content>
+    <Content Include="CodeTemplates\AddView\CSHTML\Details.cshtml" />
+    <Content Include="CodeTemplates\AddView\CSHTML\Details.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Details1.cshtml</LastGenOutput>
+    </Content>
+    <Content Include="CodeTemplates\AddView\CSHTML\Edit.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Edit.cshtml</LastGenOutput>
+    </Content>
+    <Content Include="CodeTemplates\AddView\CSHTML\Empty.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Empty.cshtml</LastGenOutput>
+    </Content>
+    <Content Include="CodeTemplates\AddView\CSHTML\List.cshtml" />
+    <Content Include="CodeTemplates\AddView\CSHTML\List.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>List1.cshtml</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CodeTemplates\AddView\CSHTML\Delete.cshtml">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Delete.tt</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Empleado\Eliminar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CodeTemplates\AddView\CSHTML\Details1.cshtml">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Details.tt</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CodeTemplates\AddView\CSHTML\Create1.cshtml">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Create.tt</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CodeTemplates\AddView\CSHTML\Edit.cshtml">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.tt</DependentUpon>
+    </Content>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

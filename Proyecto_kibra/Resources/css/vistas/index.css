@@ -2,7 +2,11 @@
     font-size: .85em;
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
     color: #232323;
-    background-color: #fff;
+    padding-top: 10%;
+    padding-bottom: 5%;
+    background-color: #eee;
+    background: url("/Resources/images/gestionempresarial.jpg") no-repeat bottom center fixed transparent;
+    background-size: cover;
 }
 
 header, footer, nav, section {
@@ -62,14 +66,6 @@ textarea {
 
 #alert_error_msg {
     padding: 3px 7px 3px 7px;
-}
-
-
-body {
-    padding-top: 10%;
-    padding-bottom: 5%;
-    background-color: #eee;
-    background: url("/Resources/images/gestionempresarial.jpg") no-repeat bottom center fixed transparent;
 }
 
 .form-signin-logo {

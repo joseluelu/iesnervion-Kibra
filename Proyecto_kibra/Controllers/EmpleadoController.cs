@@ -18,12 +18,9 @@ namespace Proyecto_kibra.Controllers
         public ActionResult Detalles(int id)
         {
             Empleado empleado;
-            
-                
-           
-                EmpleadoDal helper = new EmpleadoDal();
-                empleado = helper.getEmpleadoPorId(id);
-          
+
+            EmpleadoDal helper = new EmpleadoDal();
+            empleado = helper.getEmpleadoPorId(id);
 
             return View(empleado);
         }
@@ -33,7 +30,7 @@ namespace Proyecto_kibra.Controllers
             EmpleadoModel modelo = new EmpleadoModel();
 
             modelo.Empleado = new Empleado();
-                        
+
 
             ProvinciaDal helperProvincia = new ProvinciaDal();
             modelo.Provincias = helperProvincia.getListaProvincias();
@@ -43,12 +40,12 @@ namespace Proyecto_kibra.Controllers
 
             DepartamentoDal helperDepartamento = new DepartamentoDal();
             modelo.Departamentos = helperDepartamento.getListaDepartamentos();
-            
+
             return View(modelo);
         }
 
         [HttpPost]
-        public ActionResult Nuevo(EmpleadoModel modelo,Int32 ciudad)
+        public ActionResult Nuevo(EmpleadoModel modelo, Int32 ciudad)
         {
             if (ModelState.IsValid)
             {
@@ -63,7 +60,7 @@ namespace Proyecto_kibra.Controllers
                 modelo.Empleado.PuestoEmp.IdPuesto = modelo.PuestoId;
 
                 EmpleadoDal helper = new EmpleadoDal();
-                int nuevaId=helper.guardarEmpleado(modelo.Empleado);
+                int nuevaId = helper.guardarEmpleado(modelo.Empleado);
 
 
                 Login nuevoLogin = new Login();
@@ -73,7 +70,7 @@ namespace Proyecto_kibra.Controllers
                 nuevoLogin.Passwd = modelo.passwd;
                 nuevoLogin.UltimoAcceso = DateTime.Now;
 
-               
+
 
                 LoginDal helperLogin = new LoginDal();
                 helperLogin.guardarLogin(nuevoLogin);
@@ -88,14 +85,14 @@ namespace Proyecto_kibra.Controllers
                 PuestoDal helperPuesto = new PuestoDal();
                 modelo.Puestos = helperPuesto.getListaPuestos();
 
-                
+
                 DepartamentoDal helperDepartamento = new DepartamentoDal();
                 modelo.Departamentos = helperDepartamento.getListaDepartamentos();
                 return View(modelo);
             }
 
 
-            
+
         }
 
 
@@ -128,5 +125,27 @@ namespace Proyecto_kibra.Controllers
             return View(emp);
         }
 
+        public ViewResult Eliminar(int id)
+        {
+
+            Empleado empleado;
+
+            EmpleadoDal helper = new EmpleadoDal();
+            empleado = helper.getEmpleadoPorId(id);
+
+            return View(empleado);
+        }
+
+        [HttpPost]
+        public ViewResult Eliminar(int id)
+        {
+
+            Empleado empleado;
+
+            EmpleadoDal helper = new EmpleadoDal();
+            empleado = helper.eliminarEmpleado(id);
+
+            return View(empleado);
+        }
     }
 }
