@@ -10,12 +10,17 @@ namespace CapaDal_kibra
 {
     public class ConexionBuilder
     {
-        public String server = "localhost";
-        public String bbdd = "proyecto_kibra";
-        public String usuario = "kibra";
-        public String pass = "1234";
+        //public String server = "localhost";
+        //public String bbdd = "proyecto_kibra";
+        private const string usuario = "kibra";
+        private const string pass = "Ornitomastoideo27";
+        private string stringConexion;
+            
 
-        public ConexionBuilder() { }
+        public ConexionBuilder() {
+            stringConexion =
+                "Server=tcp:buenillodb.database.windows.net,1433;Database=Proyecto_kibra;User ID=" + usuario + "@buenillodb;Password=" + pass + ";Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        }
 
         /// <summary>
         /// Metodo que devuelve una conexion a la bbdd.
@@ -24,7 +29,7 @@ namespace CapaDal_kibra
         public SqlConnection getConexion()
         {
             SqlConnection conexion = new SqlConnection();
-            conexion.ConnectionString="Data Source="+server+";Initial Catalog="+bbdd+";user id="+usuario+";password="+pass;
+            conexion.ConnectionString=stringConexion;
             try
             {
                 conexion.Open();
