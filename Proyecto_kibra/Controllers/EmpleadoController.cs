@@ -137,15 +137,13 @@ namespace Proyecto_kibra.Controllers
         }
 
         [HttpPost]
-        public ViewResult Eliminar(int id)
+        [ActionName("Eliminar")]
+        public ActionResult EliminarPost(int id)
         {
-
-            Empleado empleado;
-
             EmpleadoDal helper = new EmpleadoDal();
-            empleado = helper.eliminarEmpleado(id);
+            helper.eliminarEmpleado(id);
 
-            return View(empleado);
+            return RedirectToAction("Listado");
         }
     }
 }
